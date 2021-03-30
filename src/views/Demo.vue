@@ -281,7 +281,7 @@ export default defineComponent({
     },
     onCountFinished(): void {
       // eslint-disable-next-line no-alert
-      if (this.showAlert) alert('Counting Finished');
+      if (this.showAlert) alert('Counting finished!');
     },
   },
 });

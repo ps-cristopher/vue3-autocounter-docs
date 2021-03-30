@@ -36,7 +36,7 @@ export default defineComponent({
 @tailwind utilities;
 
 .main {
-  min-height: 90vh;
+  min-height: 85vh;
 }
 
 #app {

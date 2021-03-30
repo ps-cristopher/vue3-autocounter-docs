@@ -13,7 +13,7 @@
           />
         </a>
         <a class="link hidden text-md md:inline-flex" href="https://twitter.com/ps_cristopher" rel="noopener noreferrer" target="_blank">
-          by @ps_cristopher
+          @ps_cristopher <i class="fab fa-twitter ml-2"></i>
         </a>
       </nav>
       <div class="flex w-3/5 justify-end items-center ml-6 lg:ml-0">
@@ -27,7 +27,7 @@
           <i class="fas fa-sun text-yellow-300" v-else></i>
         </a>
         <a
-          href="https://www.buymeacoffee.com/pazlydev"
+          href="https://www.buymeacoffee.com/ps.cristopher"
           class="bg-pink-700 hover:bg-pink-900 text-white ml-3 py-2 px-3 rounded-lg"
           target="_blank" rel="noopener noreferrer"
         >
@@ -35,7 +35,6 @@
         </a>
         <a
           class="bg-blue-500 hover:bg-blue-900 text-white ml-3 py-2 px-3 rounded-lg cursor-pointer"
-          target="_blank"
           @click="share()"
         >
           <i class="fab fa-twitter"></i> Share
@@ -44,7 +43,7 @@
     </div>
     <nav class="flex px-2 pb-5 pt-1 w-full justify-end text-base">
       <div class="w-1/2 text-left pl-10">
-        <i class="fas fa-bars text-2xl sm:hidden"></i>
+        <i class="fas fa-bars text-2xl md:hidden"></i>
       </div>
       <div class="w-1/2 text-right">
         <router-link to="/" :class="isSameOfCurrentRoute('Demo') ? 'link-active' : 'link'">
