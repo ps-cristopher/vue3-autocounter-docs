@@ -222,6 +222,7 @@
         />
       </div>
     </div>
+    <pre><code class="language-haml">{{vue3Tag}}</code></pre>
   </div>
 </template>
 
@@ -229,6 +230,8 @@
 import { defineComponent } from 'vue';
 import Autocounter from 'vue3-autocounter';
 import NProgress from 'nprogress';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-haml';
 
 interface Data {
   startAmount: number;
@@ -263,8 +266,16 @@ export default defineComponent({
     };
   },
   mounted() {
+    Prism.highlightAll();
     NProgress.done();
     this.$refs.counter.start();
+  },
+  computed: {
+    vue3Tag() {
+      const text = `<vue3-autocounter ref="counter" startAmount="${this.startAmount}" endAmount="${this.endAmount}" duration="${this.duration}" prefix="${this.prefix}" suffix="${this.suffix}" separator="${this.separator}" decimalSeparator="${this.decimalSeparator}" decimals="${this.decimals}" autoinit="${this.autoinit}" ${this.showAlert ? '@finished="alert(Counting finished!)"' : ''}/>`;
+      Prism.highlightAll();
+      return text;
+    },
   },
   methods: {
     pause(): void {

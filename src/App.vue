@@ -14,6 +14,14 @@
 import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-haml';
+import 'prismjs/components/prism-shell-session';
+
+console.log(Prism);
 
 export default defineComponent({
   name: 'Home',
@@ -35,10 +43,6 @@ export default defineComponent({
 @tailwind components;
 @tailwind utilities;
 
-.main {
-  min-height: 85vh;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -58,6 +62,10 @@ export default defineComponent({
       color: #42b983;
     }
   }
+}
+
+.main {
+  min-height: 85vh;
 }
 
 .link {
@@ -86,4 +94,22 @@ export default defineComponent({
   @apply border border-gray-300 p-2 my-2 rounded-md
   focus:outline-none focus:ring-2 ring-blue-200 text-gray-900;
 }
+
+.title {
+  @apply
+  text-4xl font-bold
+  pl-2 pb-2
+  border-b-4 border-green-500;
+}
+
+pre {
+  @apply
+  bg-gray-800 pb-0 pt-0 !important;
+}
+
+p {
+  @apply
+  my-4;
+}
+
 </style>
