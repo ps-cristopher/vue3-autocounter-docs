@@ -1,51 +1,61 @@
 <template>
-  <div class="min-h-screen flex flex-row bg-white dark:bg-gray-900
-  h-full border-t-2 border-b-2 border-green-400 border-opacity-10">
-  <div class="hidden md:flex flex-col w-56 border-r border-green-400 border-opacity-10
-  dark:bg-gray-900 overflow-hidden">
-    <!-- <div class="flex items-center justify-center h-20 shadow-md">
-      <h1 class="text-3xl uppercase text-indigo-500">Logo</h1>
-    </div> -->
-    <ul class="flex flex-col py-4">
-      <li>
-        <a href="#" class="sidebar-link">
-          <span class="inline-flex items-center justify-center h-12 w-12
-          text-lg text-gray-400"><i class="bx bx-home"></i></span>
-          <span class="text-lg font-medium">Installation</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="sidebar-link">
-          <span class="inline-flex items-center justify-center h-12 w-12
-          text-lg text-gray-400"><i class="bx bx-music"></i></span>
-          <span class="text-lg font-medium">Usage</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="sidebar-link">
-          <span class="inline-flex items-center justify-center h-12 w-12
-          text-lg text-gray-400"><i class="bx bx-drink"></i></span>
-          <span class="text-lg font-medium">Properties</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="sidebar-link">
-          <span class="inline-flex items-center justify-center h-12 w-12 text-lg
-          text-gray-400"><i class="bx bx-shopping-bag"></i></span>
-          <span class="text-lg font-medium">Events</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="sidebar-link">
-          <span class="inline-flex items-center justify-center h-12 w-12
-          text-lg text-gray-400"><i class="bx bx-chat"></i></span>
-          <span class="text-lg font-medium">Methods</span>
-        </a>
-      </li>
-    </ul>
+  <div class="main">
+    <aside class="aside">
+      <ul class="flex flex-col py-4">
+        <li>
+          <a
+            href="/docs#installation"
+            :class="routeHash == '#installation' ? 'sidebar-link link-active' : 'sidebar-link'"
+          >
+            <span class="inline-flex items-center justify-center h-12 w-12
+            text-lg text-gray-400"><i class="bx bx-home"></i></span>
+            <span class="text-lg font-medium">Installation</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/docs#usage"
+            :class="routeHash == '#usage' ? 'sidebar-link link-active' : 'sidebar-link'"
+          >
+            <span class="inline-flex items-center justify-center h-12 w-12
+            text-lg text-gray-400"><i class="bx bx-music"></i></span>
+            <span class="text-lg font-medium">Usage</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/docs#properties"
+            :class="routeHash == '#properties' ? 'sidebar-link link-active' : 'sidebar-link'"
+          >
+            <span class="inline-flex items-center justify-center h-12 w-12
+            text-lg text-gray-400"><i class="bx bx-drink"></i></span>
+            <span class="text-lg font-medium">Properties</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/docs#events"
+            :class="routeHash == '#events' ? 'sidebar-link link-active' : 'sidebar-link'"
+          >
+            <span class="inline-flex items-center justify-center h-12 w-12 text-lg
+            text-gray-400"><i class="bx bx-shopping-bag"></i></span>
+            <span class="text-lg font-medium">Events</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/docs#methods"
+            :class="routeHash == '#methods' ? 'sidebar-link link-active' : 'sidebar-link'"
+          >
+            <span class="inline-flex items-center justify-center h-12 w-12
+            text-lg text-gray-400"><i class="bx bx-chat"></i></span>
+            <span class="text-lg font-medium">Methods</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <slot/>
   </div>
-  <slot/>
-</div>
 </template>
 
 <script lang="ts">
@@ -53,6 +63,14 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Sidebar',
+  computed: {
+    currentRoute() {
+      return this.$router.currentRoute.value;
+    },
+    routeHash() {
+      return this.currentRoute.hash ? this.currentRoute.hash : null;
+    },
+  },
 });
 </script>
 
@@ -72,5 +90,19 @@ export default defineComponent({
   border-b-0 border-l-4
   bg-opacity-25 bg-green-400
   dark:text-green-500;
+}
+
+.main {
+  @apply
+  min-h-screen flex flex-row border-gray-400
+  h-full border-t-2 border-b-2 dark:border-green-400
+  dark:border-opacity-10;
+}
+
+.aside {
+  @apply
+  hidden md:flex flex-col w-56 border-r border-gray-400
+  dark:border-green-400 dark:border-opacity-10
+  dark:bg-gray-900 overflow-hidden;
 }
 </style>
