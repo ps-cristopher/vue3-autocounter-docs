@@ -11,23 +11,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Demo',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Demo.vue'),
+    component: () => import('../views/Demo.vue'),
   },
   {
     path: '/docs',
     name: 'Docs',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Docs.vue'),
+    component: () => import('../views/Docs.vue'),
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/NotFound.vue'),
+    component: () => import('../views/NotFound.vue'),
   },
 ];
 
