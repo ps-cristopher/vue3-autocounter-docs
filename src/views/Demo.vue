@@ -1,5 +1,19 @@
 <template>
   <div class="container mx-auto px-2">
+    <transition name="fade">
+      <div
+        v-if="isShowingAlert"
+        class="motion-safe:animate-spin bg-green-500 border
+        border-green-400 text-green-900 px-4 py-3 mt-2 rounded relative"
+        role="alert"
+      >
+        <strong class="font-bold">Yeah! </strong>
+        <span class="block sm:inline">Count finished.</span>
+        <span class="absolute top-0 bottom-0 right-0 px-4 py-3" @click="isShowingAlert = false">
+          <svg class="fill-current h-6 w-6 text-green-900" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
+        </span>
+      </div>
+    </transition>
     <div class="text-center mt-4 mb-4 w-full pl-6 pr-6 mr-2 ml-2">
       <img v-if="true" alt="Vue AutoCounter Logo"
       src="../assets/logo.png"
@@ -7,8 +21,9 @@
     </div>
     <div class="text-center mt-10 mb-10">
       <p class="text-xl mb-2">
-        A lightweight Vue 3 component made with TypeScript to quickly create an animation that
-        shows an automatic count of any quantity in any duration, counting up or down.
+        A lightweight Vue 3 component made with TypeScript, you can use it to create an animation
+        that shows an automatic count for any quantity as well count duration,
+        it can be used for counting up and down.
       </p>
       <a class="link text-xl" href="https://github.com/ps-cristopher/vue3-autocounter" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-github"></i> View on Github.
@@ -27,10 +42,10 @@
       Try it <i class="fas fa-arrow-down"></i>
     </p>
     <p class="font-medium text-8xl">
-      <Autocounter
+      <vue3-autocounter
         ref="counter"
-        :startAmount="Number(startAmount)"
-        :endAmount="Number(endAmount)"
+        :startAmount="startAmount"
+        :endAmount="endAmount"
         :duration="Number(duration)"
         :prefix="prefix"
         :suffix="suffix"
@@ -108,6 +123,7 @@
         Reset
       </button>
     </div>
+
     <div class="grid grid-cols-2 sm:grid-cols-4 mb-10 space-y-4">
       <div class="text-center my-4">
         <label class="text-left" for="startAmount">
@@ -222,16 +238,16 @@
         />
       </div>
     </div>
-    <pre><code class="language-haml">{{vue3Tag}}</code></pre>
+
+    <div class="mx-6 text-left">
+      <code-snippet :content="vue3Tag"/>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Autocounter from 'vue3-autocounter';
 import NProgress from 'nprogress';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-haml';
 
 interface Data {
   startAmount: number;
@@ -244,13 +260,11 @@ interface Data {
   decimals: number;
   autoinit: boolean;
   showAlert: boolean;
+  isShowingAlert: boolean;
 }
 
 export default defineComponent({
   name: 'Demo',
-  components: {
-    Autocounter,
-  },
   data(): Data {
     return {
       startAmount: 0,
@@ -263,18 +277,36 @@ export default defineComponent({
       decimals: 0,
       autoinit: false,
       showAlert: false,
+      isShowingAlert: false,
     };
   },
   mounted() {
-    Prism.highlightAll();
     NProgress.done();
     this.$refs.counter.start();
   },
   computed: {
     vue3Tag() {
-      const text = `<vue3-autocounter ref="counter" startAmount="${this.startAmount}" endAmount="${this.endAmount}" duration="${this.duration}" prefix="${this.prefix}" suffix="${this.suffix}" separator="${this.separator}" decimalSeparator="${this.decimalSeparator}" decimals="${this.decimals}" autoinit="${this.autoinit}" ${this.showAlert ? '@finished="alert(Counting finished!)"' : ''}/>`;
-      Prism.highlightAll();
-      return text;
+      return `
+<vue3-autocounter ref="counter" :startAmount="${this.startAmount}" :endAmount="${this.endAmount}" :duration="${this.duration}" prefix="${this.prefix}" suffix="${this.suffix}" separator="${this.separator}" decimalSeparator="${this.decimalSeparator}" :decimals="${this.decimals}" :autoinit="${this.autoinit}" ${this.showAlert ? '@finished="alert(`Counting finished!`)"' : ''}/>
+      `;
+    },
+  },
+  watch: {
+    startAmount() {
+      if (!this.startAmount) this.startAmount = 0;
+      this.startAmount = Number(this.startAmount);
+    },
+    endAmount() {
+      if (!this.endAmount) this.endAmount = 0;
+      this.endAmount = Number(this.endAmount);
+    },
+    duration() {
+      if (this.duration < 0) this.duration = 0;
+      this.duration = Number(this.duration);
+    },
+    decimals() {
+      if (this.decimals < 0) this.decimals = 0;
+      this.decimals = parseInt(this.decimals, 10);
     },
   },
   methods: {
@@ -288,11 +320,15 @@ export default defineComponent({
       this.$refs.counter.reset();
     },
     start(): void {
+      this.isShowingAlert = false;
       this.$refs.counter.start();
     },
     onCountFinished(): void {
-      // eslint-disable-next-line no-alert
-      if (this.showAlert) alert('Counting finished!');
+      if (this.showAlert) {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        this.isShowingAlert = true;
+      }
     },
   },
 });
