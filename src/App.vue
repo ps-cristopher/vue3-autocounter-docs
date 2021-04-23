@@ -11,17 +11,10 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable import/no-unresolved */
 import { defineComponent } from 'vue';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism-okaidia.css';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-css';
-import 'prismjs/components/prism-haml';
-import 'prismjs/components/prism-shell-session';
-
-console.log(Prism);
+import Header from '@/layout/Header.vue';
+import Footer from '@/layout/Footer.vue';
 
 export default defineComponent({
   name: 'Home',
@@ -82,7 +75,7 @@ export default defineComponent({
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity .1s ease;
+  transition: opacity .3s ease;
 }
 
 .fade-enter-from,
