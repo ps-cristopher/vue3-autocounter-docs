@@ -31,7 +31,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  NProgress.start();
+  if (to.path !== from.path) NProgress.start();
   next();
 });
 
