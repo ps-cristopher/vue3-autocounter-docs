@@ -24,9 +24,7 @@ export default defineComponent({
   },
   mounted() {
     const isDarkMode = localStorage.getItem('isDarkMode');
-    if (isDarkMode === 'true') {
-      this.$store.dispatch('setDarkMode', isDarkMode);
-    }
+    this.$store.dispatch('setDarkMode', isDarkMode);
   },
 });
 </script>
