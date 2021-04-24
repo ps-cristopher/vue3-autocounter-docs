@@ -12,14 +12,13 @@
     <script>
       // Google Analytics
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+
+      function gtag(){
+        dataLayer.push(arguments);
+      }
+
       gtag('js', new Date());
       gtag('config', 'G-ZQ6N4W5WQW');
-      // Dark Mode
-      const isDarkMode = localStorage.getItem('isDarkMode');
-      if (isDarkMode === 'true' || (!('isDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.getElementById('html').className = 'dark';
-      } else document.getElementById('html').className = '';
     </script>
   </head>
   <body class="dark:bg-gray-900">
