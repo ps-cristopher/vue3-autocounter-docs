@@ -15,7 +15,9 @@ export default createStore({
   },
   actions: {
     setDarkMode({ commit }, isDarkMode: boolean): void {
-      if (isDarkMode || (!('isDarkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      // if (isDarkMode || (!('isDarkMode' in localStorage) &&
+      //  window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      if (isDarkMode) {
         document.getElementById('html').className = 'dark';
       } else document.getElementById('html').className = '';
 
