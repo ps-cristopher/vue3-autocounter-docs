@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <aside class="aside w-1/6 2xl:2/12">
+    <aside class="aside w-1/6 2xl:2/12 fixed sm:static">
       <ul class="flex flex-col py-4">
         <li>
           <a
