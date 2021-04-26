@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-4">
+  <footer>
     <div class="flex items-center justify-center text-gray-100
     bg-gray-900 body-font shadow w-full pt-2">
       Made with ❤️ by
