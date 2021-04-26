@@ -7,7 +7,7 @@
       Page not found.
     </p>
     <a class="link text-2xl ml-4" href="/">
-      <i class="fas fa-home"></i> Go to home
+      <i class="fas fa-home"></i> Home
     </a>
   </div>
 </template>
