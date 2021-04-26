@@ -60,24 +60,28 @@ export default defineComponent({
         `"></code-snippet>
       </section>
 
-      <section id="properties" class="flex flex-col w-full text-left mt-4">
+      <section
+        id="properties"
+        class="flex flex-col w-full text-left mt-4
+        overflow-x-auto sm:overflow-x-hidden overflow-y-hidden"
+      >
         <h1 class="title">Properties</h1>
         <table class="table mt-4">
           <thead>
-            <th class="th">
+            <th class="th rounded-tl-lg">
               Name
             </th>
             <th class="th">
               Type
             </th>
-            <th class="th">
+            <th class="th rounded-r-lg lg:rounded-r-none">
               Default
             </th>
-            <th class="th">
+            <th class="th hidden rounded-tr-lg lg:block">
               Description
             </th>
           </thead>
-          <tbody>
+          <tbody class=" border-b-2 border-r-2 border-green-600">
             <tr>
               <td class="td">
                 <code>startAmount</code>
@@ -85,13 +89,20 @@ export default defineComponent({
               <td class="td">
                 <code>Number</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>0</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Velit, error? Quaerat pariatur magni similique velit
+                temporibus. Velit, error? Quaerat pariatur magni similique velit temporibus.
               </td>
             </tr>
             <tr>
@@ -101,10 +112,10 @@ export default defineComponent({
               <td class="td">
                 <code>Number</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>0</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -117,10 +128,10 @@ export default defineComponent({
               <td class="td">
                 <code>Number</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>3</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -133,10 +144,10 @@ export default defineComponent({
               <td class="td">
                 <code>Boolean</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>true</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -149,10 +160,10 @@ export default defineComponent({
               <td class="td">
                 <code>String</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>''</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -165,10 +176,10 @@ export default defineComponent({
               <td class="td">
                 <code>String</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>''</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -181,10 +192,10 @@ export default defineComponent({
               <td class="td">
                 <code>String</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>','</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
@@ -197,29 +208,57 @@ export default defineComponent({
               <td class="td">
                 <code>String</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>'.'</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
               </td>
             </tr>
             <tr>
-              <td class="td">
+              <td class="td border-b">
                 <code>decimals</code>
               </td>
-              <td class="td">
+              <td class="td border-b-8">
                 <code>Number</code>
               </td>
-              <td class="td">
+              <td class="td text-center">
                 <code>0</code>
               </td>
-              <td class="td">
+              <td class="td hidden lg:table-cell text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
                 Velit, error? Quaerat pariatur magni similique velit temporibus.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        id="events"
+        class="flex flex-col w-full text-left mt-4
+        overflow-x-auto sm:overflow-x-hidden overflow-y-hidden"
+      >
+        <h1 class="title">Events</h1>
+        <table class="table mt-4">
+          <thead>
+            <th class="th rounded-tl-lg">
+              Name
+            </th>
+            <th class="th hidden rounded-tr-lg lg:block">
+              Description
+            </th>
+          </thead>
+          <tbody class=" border-b-2 border-r-2 border-green-600">
+            <tr>
+              <td class="td">
+                <code>startAmount</code>
+              </td>
+              <td class="td">
+                <code>Number</code>
               </td>
             </tr>
           </tbody>
@@ -255,18 +294,18 @@ export default defineComponent({
 <style lang="postcss" scoped>
 .table {
   @apply
-  border-collapse border border-green-800
+  border-collapse
 }
 
 .th {
   @apply
-  border border-green-600 text-white
-  py-4 px-8 text-center bg-gray-800
+   text-white
+    py-4 px-8 text-center bg-gray-800
 }
 
 .td {
   @apply
   border border-green-600
-  py-2 px-8 text-center
+  py-2 px-8
 }
 </style>
