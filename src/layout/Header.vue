@@ -27,7 +27,7 @@
           <i class="fas fa-sun text-yellow-300" v-else></i>
         </a>
         <a
-          href="https://www.buymeacoffee.com/ps.cristopher"
+          href="https://www.creadores.fans/ps_cristopher"
           class="bg-pink-700 hover:bg-pink-900 text-white ml-3 py-2 px-3 rounded-lg"
           target="_blank" rel="noopener noreferrer"
         >
@@ -49,7 +49,8 @@
         <router-link to="/" :class="isSameOfCurrentRoute('Demo') ? 'link-active' : 'link'">
           <i class="fas fa-laptop"></i> Demo
         </router-link>
-        <router-link to="/docs" :class="isSameOfCurrentRoute('Docs') ? 'link-active' : 'link'">
+        <router-link to="/docs#installation"
+        :class="isSameOfCurrentRoute('Docs') ? 'link-active' : 'link'">
           <i class="fas fa-book"></i> Docs
         </router-link>
       </div>
