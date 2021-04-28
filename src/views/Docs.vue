@@ -62,22 +62,22 @@ export default defineComponent({
 
       <section
         id="properties"
-        class="flex flex-col w-full text-left mt-4
+        class="flex flex-col w-full text-left mt-8
         overflow-x-auto sm:overflow-x-hidden overflow-y-hidden"
       >
         <h1 class="title">Properties</h1>
         <table class="table mt-4">
           <thead>
-            <th class="th rounded-tl-lg">
+            <th class="th rounded-tl-md">
               Name
             </th>
             <th class="th">
               Type
             </th>
-            <th class="th rounded-r-lg lg:rounded-r-none">
+            <th class="th rounded-r-md lg:rounded-r-none">
               Default
             </th>
-            <th class="th hidden rounded-tr-lg lg:block">
+            <th class="th hidden rounded-tr-md lg:block">
               Description
             </th>
           </thead>
@@ -93,16 +93,13 @@ export default defineComponent({
                 <code>0</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                The counting start amount can be an integer or decimal number.
               </td>
             </tr>
             <tr>
               <td class="td lg:hidden text-justify" colspan="3">
-                <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Velit, error? Quaerat pariatur magni similique velit
-                temporibus. Velit, error? Quaerat pariatur magni similique velit temporibus.
+                <strong>Description:</strong> The counting start amount can be
+                an integer or decimal number.
               </td>
             </tr>
             <tr>
@@ -116,9 +113,13 @@ export default defineComponent({
                 <code>0</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                The counting end amount can be an integer or decimal number.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> The counting end amount can be
+                an integer or decimal number.
               </td>
             </tr>
             <tr>
@@ -132,9 +133,14 @@ export default defineComponent({
                 <code>3</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                This the counting duration in seconds,
+                it must be an integer or decimal positive.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> This the counting duration in seconds,
+                it must be an integer or decimal positive.
               </td>
             </tr>
             <tr>
@@ -148,9 +154,16 @@ export default defineComponent({
                 <code>true</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                A boolean to define if the counting should be auto-inited
+                when the component is mounted. Set <code>true</code> if you want to auto-init
+                the counting.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> A boolean to define if the counting should
+                be auto-inited when the component is mounted. Set <code>true</code>
+                if you want to auto-init the counting.
               </td>
             </tr>
             <tr>
@@ -164,9 +177,13 @@ export default defineComponent({
                 <code>''</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                Define a prefix to be shown with the counting animation.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Define a prefix to be shown
+                with the counting animation.
               </td>
             </tr>
             <tr>
@@ -180,9 +197,14 @@ export default defineComponent({
                 <code>''</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                Define a suffix to be shown
+                with the counting animation.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Define a suffix to be shown
+                with the counting animation.
               </td>
             </tr>
             <tr>
@@ -196,9 +218,12 @@ export default defineComponent({
                 <code>','</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                Define a thousand separator for the counting amount.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Define a thousand separator for the counting amount.
               </td>
             </tr>
             <tr>
@@ -212,12 +237,15 @@ export default defineComponent({
                 <code>'.'</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                Define a decimal separator for the counting amount.
               </td>
             </tr>
             <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Define a decimal separator for the counting amount.
+              </td>
+            </tr>
+            <tr class="border-b-2 border-r-2 border-green-600">
               <td class="td border-b">
                 <code>decimals</code>
               </td>
@@ -228,9 +256,13 @@ export default defineComponent({
                 <code>0</code>
               </td>
               <td class="td hidden lg:table-cell text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
-                Velit, error? Quaerat pariatur magni similique velit temporibus.
+                Define the number of decimals to be shown with the counting amount.
+              </td>
+            </tr>
+            <tr>
+              <td class="td lg:hidden text-justify" colspan="3">
+                <strong>Description:</strong> Define the number of decimals to
+                be shown with the counting amount.
               </td>
             </tr>
           </tbody>
@@ -239,26 +271,108 @@ export default defineComponent({
 
       <section
         id="events"
-        class="flex flex-col w-full text-left mt-4
+        class="flex flex-col w-full text-left mt-8
         overflow-x-auto sm:overflow-x-hidden overflow-y-hidden"
       >
         <h1 class="title">Events</h1>
         <table class="table mt-4">
           <thead>
-            <th class="th rounded-tl-lg">
+            <th class="th rounded-tl-md">
               Name
             </th>
-            <th class="th hidden rounded-tr-lg lg:block">
+            <th class="th rounded-tr-md">
               Description
             </th>
           </thead>
           <tbody class=" border-b-2 border-r-2 border-green-600">
             <tr>
               <td class="td">
-                <code>startAmount</code>
+                <code>@finished</code>
               </td>
               <td class="td">
-                <code>Number</code>
+                This event is emitted when the counting finishes.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section
+        id="methods"
+        class="flex flex-col w-full text-left mt-8
+        overflow-x-auto sm:overflow-x-hidden overflow-y-hidden"
+      >
+        <h1 class="title">Methods</h1>
+        <p>
+          If you want to access the component methods you can use a ref
+          property in the <code>vue3-autocounter</code> tag, just
+          reference the component and execute its methods when you need it.
+        </p>
+
+      <code-snippet :content="`
+<template>
+  ${vueTag}
+  <button @click='start()'>Start counting</button>
+</template>
+        `"></code-snippet>
+
+<code-snippet type="language-js" :content="`
+...
+methods: {
+  start() {
+    this.$refs.counter.start();
+  }
+},
+...
+        `"></code-snippet>
+
+        <p>
+          This are the methods you can use.
+        </p>
+
+        <table class="table mt-4">
+          <thead>
+            <th class="th rounded-tl-md">
+              Name
+            </th>
+            <th class="th rounded-tr-md">
+              Description
+            </th>
+          </thead>
+          <tbody class=" border-b-2 border-r-2 border-green-600">
+            <tr>
+              <td class="td">
+                <code>start()</code>
+              </td>
+              <td class="td">
+                Start the counting. If the <code>autoinit</code> property
+                is setting <code>true</code> you don't need to call this
+                method to init the counting.
+              </td>
+            </tr>
+            <tr>
+              <td class="td">
+                <code>pause()</code>
+              </td>
+              <td class="td">
+                You can pause the counting by calling this method.
+              </td>
+            </tr>
+            <tr>
+              <td class="td">
+                <code>resume()</code>
+              </td>
+              <td class="td">
+                If you pause the counting, you can resume it by calling this method.
+              </td>
+            </tr>
+            <tr>
+              <td class="td">
+                <code>reset()</code>
+              </td>
+              <td class="td">
+                Reset the counting calling this method, you can calling
+                whenever you need it during the animation or after it.
               </td>
             </tr>
           </tbody>
