@@ -2,7 +2,7 @@
   "name": "vue3-autocounter-docs",
   "description": "A lightweight Vue 3 component made with TypeScript",
   "author": "Cristopher PS <info@cristopherps.com>",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
