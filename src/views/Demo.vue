@@ -14,13 +14,12 @@
         </span>
       </div>
     </transition>
-    <div class="text-center mt-4 mb-4 w-full pl-6 pr-6 mr-2 ml-2">
-      <img v-if="true" alt="Vue AutoCounter Logo"
-      src="../assets/logo.png"
-      style="width: 80%;margin-right:10%;margin-left:10%;">
+    <div class="grid text-center my-4 mx-auto w-full justify-items-center">
+      <img loading="lazy" v-if="true" alt="Vue AutoCounter Logo"
+      src="../assets/logo.png" width="1000">
     </div>
-    <div class="text-center mt-10 mb-10">
-      <p class="text-xl mb-2">
+    <div class="text-center mt-10 mb-10 grid justify-items-center">
+      <p class="text-xl mb-2 lg:w-1/2">
         A lightweight Vue 3 component made with TypeScript, you can use it to create an animation
         that shows an automatic count for any quantity as well count duration,
         it can be used for counting up and down.
@@ -89,9 +88,9 @@
         </label>
       </div>
     </div>
-    <div class="text-center mt-10 mb-10">
+    <div class="mt-10 mb-5 grid grid-cols-2 sm:grid-cols-4 justify-items-center">
       <button
-        class="w-1/5 mr-2 bg-gray-500 hover:bg-green-500 text-white py-2
+        class="w-3/4 mr-2 bg-gray-500 hover:bg-green-500 text-white py-2
         px-2 text-md rounded-lg cursor-pointer"
         @click="start()"
       >
@@ -99,7 +98,7 @@
         Start
       </button>
       <button
-        class="w-1/5 mr-2 bg-gray-500 hover:bg-green-500 text-white py-2
+        class="w-3/4 mr-2 bg-gray-500 hover:bg-green-500 text-white py-2
         px-2 text-md rounded-lg cursor-pointer"
         @click="pause()"
       >
@@ -107,7 +106,7 @@
         Pause
       </button>
       <button
-        class="w-1/5 mr-2 bg-gray-500 hover:bg-green-500 text-white py-2
+        class="w-3/4 mr-2 bg-gray-500 hover:bg-green-500 sm:mt-0 mt-2 text-white py-2
         px-2 text-md rounded-lg cursor-pointer"
         @click="resume()"
       >
@@ -115,7 +114,7 @@
         Resume
       </button>
       <button
-        class="w-1/5 bg-gray-500 hover:bg-green-500 text-white py-2
+        class="w-3/4 bg-gray-500 hover:bg-green-500 sm:mt-0 mt-2 text-white py-2
         px-2 text-md rounded-lg cursor-pointer"
         @click="reset()"
       >
