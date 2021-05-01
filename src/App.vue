@@ -24,7 +24,8 @@ export default defineComponent({
   },
   mounted() {
     const isDarkMode = localStorage.getItem('isDarkMode');
-    this.$store.dispatch('setDarkMode', isDarkMode);
+    const isDarkModeBool = isDarkMode === 'true';
+    this.$store.dispatch('setDarkMode', isDarkModeBool);
   },
 });
 </script>
@@ -40,6 +41,10 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+@font-face {
+  font-display: swap;
 }
 
 #nav {

@@ -9,7 +9,8 @@
           <img
             src="../assets/favicon.png"
             alt="logo"
-            style="width: 5rem;"
+            width="80"
+            loading="lazy"
           />
         </a>
         <a class="link hidden text-md md:inline-flex" href="https://twitter.com/ps_cristopher" rel="noopener noreferrer" target="_blank">
@@ -20,7 +21,6 @@
         <a
           class="bg-transparent hover:bg-gray-900 text-white ml-3 py-2
           px-3 rounded-lg cursor-pointer"
-          target="_blank"
           @click="toggleDarkMode()"
         >
           <i class="fas fa-moon text-yellow-200" v-if="isDarkMode"></i>
@@ -42,8 +42,9 @@
       </div>
     </div>
     <nav class="flex px-2 pb-5 pt-1 w-full justify-end text-base">
+      <!-- Hamburguer buttom-->
       <div class="w-1/2 text-left pl-10">
-        <i class="fas fa-bars text-2xl md:hidden"></i>
+        <i class="fas fa-bars text-2xl cursor-pointer" @click="toggleSideBar()"></i>
       </div>
       <div class="w-1/2 text-right">
         <router-link to="/" :class="isSameOfCurrentRoute('Demo') ? 'link-active' : 'link'">
@@ -90,6 +91,9 @@ export default defineComponent({
       this.$store.dispatch('setDarkMode', !this.isDarkMode);
       // window.location.reload();
       NProgress.done();
+    },
+    toggleSideBar(): void {
+      this.$store.dispatch('toggleSideBar');
     },
   },
 });

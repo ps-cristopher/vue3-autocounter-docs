@@ -1,12 +1,12 @@
 <template>
   <div class="main">
-    <aside class="aside w-1/6 2xl:2/12 fixed sm:static">
+    <aside class="aside w-1/2 sm:w-1/6 2xl:2/12 fixed top-0 sm:static" v-show="isShowingSideBar">
       <ul class="flex flex-col py-4">
         <li>
           <a
             href="/docs#installation"
             :class="routeHash == '#installation' ? 'sidebar-link link-active' : 'sidebar-link'"
-            @click="endNprogress()"
+            @click="onLinkClick()"
           >
             <span class="inline-flex items-center justify-center h-12 w-12
             text-lg text-gray-400"><i class="bx bx-home"></i></span>
@@ -17,7 +17,7 @@
           <a
             href="/docs#usage"
             :class="routeHash == '#usage' ? 'sidebar-link link-active' : 'sidebar-link'"
-            @click="endNprogress()"
+            @click="onLinkClick()"
           >
             <span class="inline-flex items-center justify-center h-12 w-12
             text-lg text-gray-400"><i class="bx bx-music"></i></span>
@@ -28,7 +28,7 @@
           <a
             href="/docs#properties"
             :class="routeHash == '#properties' ? 'sidebar-link link-active' : 'sidebar-link'"
-            @click="endNprogress()"
+            @click="onLinkClick()"
           >
             <span class="inline-flex items-center justify-center h-12 w-12
             text-lg text-gray-400"><i class="bx bx-drink"></i></span>
@@ -39,7 +39,7 @@
           <a
             href="/docs#events"
             :class="routeHash == '#events' ? 'sidebar-link link-active' : 'sidebar-link'"
-            @click="endNprogress()"
+            @click="onLinkClick()"
           >
             <span class="inline-flex items-center justify-center h-12 w-12 text-lg
             text-gray-400"><i class="bx bx-shopping-bag"></i></span>
@@ -50,7 +50,7 @@
           <a
             href="/docs#methods"
             :class="routeHash == '#methods' ? 'sidebar-link link-active' : 'sidebar-link'"
-            @click="endNprogress()"
+            @click="onLinkClick()"
           >
             <span class="inline-flex items-center justify-center h-12 w-12
             text-lg text-gray-400"><i class="bx bx-chat"></i></span>
@@ -76,10 +76,14 @@ export default defineComponent({
     routeHash() {
       return this.currentRoute.hash ? this.currentRoute.hash : null;
     },
+    isShowingSideBar() {
+      return this.$store.state.isShowingSideBar;
+    },
   },
   methods: {
-    endNprogress() {
+    onLinkClick() {
       NProgress.done();
+      if (this.isShowingSideBar) this.$store.dispatch('toggleSideBar');
     },
   },
 });
@@ -112,7 +116,7 @@ export default defineComponent({
 
 .aside {
   @apply
-  hidden md:flex flex-col border-r border-gray-400
+  z-50 h-screen bg-white md:flex flex-col border-r border-gray-400
   dark:border-green-400 dark:border-opacity-10
   dark:bg-gray-900 overflow-hidden;
 }
