@@ -4,8 +4,8 @@
     bg-gray-900 body-font shadow w-full pt-2">
       Made with ❤️ by
       <a href="https://links.cristopherps.com" target="_blank" rel="noopener noreferrer">
-      <img src="@/assets/logoCPS.png" alt="Logo Cristopher PS"
-      style="width: 7rem;" class="ml-2"></a>
+      <img loading="lazy" src="@/assets/logoCPS.png" alt="Logo Cristopher PS"
+      width="120" height="100" class="ml-2"></a>
     </div>
     <div class="flex items-center justify-center text-gray-100
     bg-gray-900 body-font shadow w-full pb-2 mt-0 pt-2">
