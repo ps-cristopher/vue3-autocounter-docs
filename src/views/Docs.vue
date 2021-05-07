@@ -1,12 +1,11 @@
 <template>
   <Sidebar>
-    <div class="py-4 w-full px-8 md:w-5/6 2xl:w-10/12">
+    <div class="py-4 w-full px-8 md:w-3/4 lg:w-10/12 2xl:w-10/12 mx-auto">
       <section id="installation" class="flex flex-col w-full text-left">
         <p>
           A lightweight Vue 3 component made with TypeScript, you can use it to
-          create an animation that shows an automatic count for any
-          quantity as well count duration, it can be used for counting up
-          and down.
+          create an animation that shows an automatic count for any quantity with
+          a specified duration, it can be used for counting up and down.
         </p>
         <h1 class="title">Installation</h1>
         <p>
@@ -94,12 +93,14 @@ export default defineComponent({
               </td>
               <td class="td hidden lg:table-cell text-justify">
                 The counting start amount can be an integer or decimal number.
+                If you need to count down just set the bigger amount to this property.
               </td>
             </tr>
             <tr>
               <td class="td lg:hidden text-justify" colspan="3">
                 <strong>Description:</strong> The counting start amount can be
-                an integer or decimal number.
+                an integer or decimal number. If you need to count down just set
+                the bigger amount to this property.
               </td>
             </tr>
             <tr>

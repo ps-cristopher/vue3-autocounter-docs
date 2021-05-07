@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-2">
+  <div class="main px-1">
     <transition name="fade">
       <div
         v-if="isShowingAlert"
@@ -21,7 +21,7 @@
     <div class="text-center mt-10 mb-10 grid justify-items-center">
       <p class="text-xl mb-2 lg:w-1/2">
         A lightweight Vue 3 component made with TypeScript, you can use it to create an animation
-        that shows an automatic count for any quantity as well count duration,
+        that shows an automatic count for any quantity with a specified duration,
         it can be used for counting up and down.
       </p>
       <a class="link text-xl" href="https://github.com/ps-cristopher/vue3-autocounter" target="_blank" rel="noopener noreferrer">

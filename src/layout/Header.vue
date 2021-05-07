@@ -1,5 +1,8 @@
 <template>
-  <header class="text-gray-100 bg-gray-900 body-font shadow w-full">
+  <header
+    class="text-gray-100 bg-gray-900 body-font shadow w-full
+    z-40 fixed top-0 md:static md:top-auto text-sm md:text-base"
+  >
     <div class="flex w-full px-4 py-2 items-center">
       <nav class="flex w-2/5 items-center justify-start text-base md:ml-auto">
         <a
@@ -41,12 +44,15 @@
         </a>
       </div>
     </div>
-    <nav class="flex px-2 pb-5 pt-1 w-full justify-end text-base">
+    <nav class="flex px-2 pb-5 pt-1 w-full justify-end text-sm md:text-base">
       <!-- Hamburguer buttom-->
-      <div class="w-1/2 text-left pl-10">
-        <i class="fas fa-bars text-2xl cursor-pointer" @click="toggleSideBar()"></i>
+      <div class="w-1/3 text-left pl-10" v-show="currentRoute.name == 'Docs'">
+        <i
+          class="fas fa-bars text-xl cursor-pointer md:hidden"
+          @click="toggleSideBar()"
+        />
       </div>
-      <div class="w-1/2 text-right">
+      <div class="w-2/3 text-right">
         <router-link to="/" :class="isSameOfCurrentRoute('Demo') ? 'link-active' : 'link'">
           <i class="fas fa-laptop"></i> Demo
         </router-link>
@@ -76,7 +82,7 @@ export default defineComponent({
   methods: {
     share(): void {
       window.open('https://twitter.com/intent/tweet?text=📣 Check out this Vue 3 component to quickly create an animation that'
-      + ' shows an automatic count of any quantity in any duration'
+      + ' shows an automatic count for any quantity with a specified duration, it can be used for counting up and down.'
       + '&size=large'
       + '&url=https://vue3-autocounter.cristopherps.com'
       + '&hashtags=vue3,webcomponent,ModoFuego🔥'

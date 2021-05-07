@@ -1,6 +1,6 @@
 <template>
   <Header></Header>
-  <main class="main dark:text-white">
+  <main class="main dark:text-white mt-32 md:mt-0">
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
         <component :is="Component" />
@@ -24,8 +24,8 @@ export default defineComponent({
   },
   mounted() {
     const isDarkMode = localStorage.getItem('isDarkMode');
-    const isDarkModeBool = isDarkMode === 'true';
-    this.$store.dispatch('setDarkMode', isDarkModeBool);
+    const isDarkModeBoolean = isDarkMode === 'true';
+    this.$store.dispatch('setDarkMode', isDarkModeBoolean);
   },
 });
 </script>

@@ -1,6 +1,15 @@
 <template>
   <div class="main">
-    <aside class="aside w-1/2 sm:w-1/6 2xl:2/12 fixed top-0 sm:static" v-show="isShowingSideBar">
+    <aside
+      class="aside w-1/2 md:w-1/4 lg:w-2/12 2xl:w-52" :class="isShowingSideBar ? 'fixed' : 'hidden'"
+    >
+      <div class="md:hidden flex justify-end mt-4 pr-4">
+        <i
+          class="fas fa-times text-right cursor-pointer text-xl
+          transition delay-150 duration-300 ease-in-out"
+          @click="onLinkClick()"
+        />
+      </div>
       <ul class="flex flex-col py-4">
         <li>
           <a
@@ -59,6 +68,11 @@
         </li>
       </ul>
     </aside>
+    <div
+      @click="onLinkClick()"
+      class=" bg-gray-900 bg-opacity-80 h-full w-full fixed top-0 z-40 md:hidden"
+      :class="isShowingSideBar ? 'fixed' : 'hidden'"
+    />
     <slot/>
   </div>
 </template>
@@ -116,8 +130,9 @@ export default defineComponent({
 
 .aside {
   @apply
-  z-50 h-screen bg-white md:flex flex-col border-r border-gray-400
+  z-50 h-screen md:h-auto bg-white md:flex flex-col border-r border-gray-400
   dark:border-green-400 dark:border-opacity-10
-  dark:bg-gray-900 overflow-hidden;
+  dark:bg-gray-900 overflow-hidden
+  md:static top-0;
 }
 </style>
