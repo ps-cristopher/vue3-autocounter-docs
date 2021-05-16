@@ -3,7 +3,9 @@
 </h1>
 
 <p align='center'>
-  <img src="https://cristopherps.com/assets/vue3-autocounter.gif" width="500">
+  <a href="https://vue3autocounter.cristopherps.dev/" target="_blank">
+    <img src="https://cristopherps.com/assets/vue3-autocounter.gif" width="500">
+  </a>
 </p>
 
 <p align='center'>
