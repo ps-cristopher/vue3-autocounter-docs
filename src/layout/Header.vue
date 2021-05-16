@@ -11,7 +11,7 @@
         >
           <img
             src="../assets/favicon.png"
-            alt="logo"
+            alt="Vue3 Autocounter Logo"
             width="80"
             loading="lazy"
           />

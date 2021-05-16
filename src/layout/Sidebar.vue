@@ -70,7 +70,8 @@
     </aside>
     <div
       @click="onLinkClick()"
-      class=" bg-gray-900 bg-opacity-80 h-full w-full fixed top-0 z-40 md:hidden"
+      class=" bg-gray-900 bg-opacity-80 h-full w-full
+      fixed top-0 z-40 cursor-pointer md:hidden"
       :class="isShowingSideBar ? 'fixed' : 'hidden'"
     />
     <slot/>

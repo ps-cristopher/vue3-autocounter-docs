@@ -15,7 +15,7 @@
       </div>
     </transition>
     <div class="grid text-center my-4 mx-auto w-full justify-items-center">
-      <img loading="lazy" v-if="true" alt="Vue AutoCounter Logo"
+      <img loading="lazy" v-if="true" alt="Vue3 AutoCounter Logo"
       src="../assets/logo.png" width="1000">
     </div>
     <div class="text-center mt-10 mb-10 grid justify-items-center">
