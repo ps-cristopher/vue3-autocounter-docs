@@ -135,7 +135,7 @@
           class="input-form w-4/5"
           id="startAmount"
           name="startAmount"
-          v-model="startAmount"
+          v-model.number="startAmount"
         />
       </div>
       <div class="text-center">
@@ -149,7 +149,7 @@
           class="input-form w-4/5"
           id="endAmount"
           name="endAmount"
-          v-model="endAmount"
+          v-model.number="endAmount"
         />
       </div>
       <div class="text-center">
@@ -163,7 +163,7 @@
           class="input-form  w-4/5"
           id="duration"
           name="duration"
-          v-model="duration"
+          v-model.number="duration"
         />
       </div>
       <div class="text-center">
@@ -293,15 +293,12 @@ export default defineComponent({
   watch: {
     startAmount() {
       if (!this.startAmount) this.startAmount = 0;
-      this.startAmount = Number(this.startAmount);
     },
     endAmount() {
       if (!this.endAmount) this.endAmount = 0;
-      this.endAmount = Number(this.endAmount);
     },
     duration() {
-      if (this.duration < 0) this.duration = 0;
-      this.duration = Number(this.duration);
+      if (this.duration < 1) this.duration = 1;
     },
     decimals() {
       if (this.decimals < 0) this.decimals = 0;
