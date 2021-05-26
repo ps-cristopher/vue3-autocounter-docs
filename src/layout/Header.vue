@@ -84,7 +84,7 @@ export default defineComponent({
       window.open('https://twitter.com/intent/tweet?text=📣 Check out this Vue 3 component to quickly create an animation that'
       + ' shows an automatic count for any quantity with a specified duration, it can be used for counting up and down.'
       + '&size=large'
-      + '&url=https://vue3-autocounter.cristopherps.com'
+      + '&url=https://vue3autocounter.cristopherps.dev'
       + '&hashtags=vue3,webcomponent,ModoFuego🔥'
       + '&via=ps_cristopher', '_blank', 'width=500,height=300,scrollbars=NO,location=NO,titlebar=NO');
     },
